@@ -1,0 +1,11 @@
+<h2>Sign in</h2>
+
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  
+  <p><%= f.label :identity_url %></p>
+  <p><%= f.text_field :identity_url %></p>
+
+  <div><%= f.submit "Sign in" %></div>
+<% end %>
+
+<%= render :partial => "devise/shared/links" %>
