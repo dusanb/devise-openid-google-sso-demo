@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable,
+         :recoverable, :rememberable, :trackable, :validatable,
          :openid_authenticatable
 
   # Setup accessible (or protected) attributes for your model
@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
   def self.openid_required_fields
     ["email", "http://axschema.org/contact/email"]
   end
+  
   
   def openid_fields=(fields)
     fields.each do |key, value|
@@ -42,4 +43,9 @@ class User < ActiveRecord::Base
     self.errors.each {|k, v| logger.info "#{k.capitalize}: #{v}"} unless self.valid?
     self.save!
   end
+  
+  protected 
+   def password_required? 
+     !identity_url.present? 
+   end
 end
