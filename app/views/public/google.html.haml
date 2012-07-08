@@ -1,0 +1,12 @@
+%h1 Google SSO
+
+%h2 Connecting your google account...
+
+= form_for(:user, :url => user_session_path) do |f|
+  = f.hidden_field :identity_url, :value => @domain
+
+  = f.submit "Connect"
+  
+:javascript
+  document.forms[0].submit();
+
