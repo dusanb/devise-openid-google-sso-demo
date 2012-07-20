@@ -6,6 +6,7 @@ gem 'rails', '3.0.11'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2', "~> 0.2.0"
+gem 'pg' #for heroku
 gem 'haml'
 gem 'devise'
 gem 'devise_openid_authenticatable'

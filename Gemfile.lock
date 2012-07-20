@@ -51,6 +51,7 @@ GEM
     mime-types (1.19)
     mysql2 (0.2.18)
     orm_adapter (0.0.7)
+    pg (0.11.0)
     polyglot (0.3.3)
     rack (1.2.5)
     rack-mount (0.6.14)
@@ -96,5 +97,6 @@ DEPENDENCIES
   devise_openid_authenticatable
   haml
   mysql2 (~> 0.2.0)
+  pg
   rails (= 3.0.11)
   ruby-openid-apps-discovery
